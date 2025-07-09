@@ -9,6 +9,7 @@
     ./gpu # gpu specific options
     ./media # sound and video
     ./options.nix # options to set the cpu and gpu
+    ./pentablet.nix # pentablet specific options
     ./power # power management
     ./tpm.nix # Trusted Platform Module
     ./yubikey.nix # yubikey device support and management tools
