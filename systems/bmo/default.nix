@@ -24,6 +24,7 @@
         "HDMI-A-1"
       ];
       keyboard = "us";
+      pentablet.enable = true;
       capabilities = {
         tpm = true;
         bluetooth = true;
@@ -57,4 +58,6 @@
       };
     };
   };
+
+  hardware.opentabletdriver.enable = true;
 }
