@@ -18,6 +18,14 @@
       "size 800 600,tag:bitwarden"
 
       "norounding, tag:terminal"
+
+      "content video, title:^(Picture-in-Picture)$"
+      "pin, title:^(Picture-in-Picture)$"
+      "move 100%-w-8 100%-w-8, title:^(Picture-in-Picture)$"
+      "opacity 0.8, focus:0, title:^(Picture-in-Picture)$"
+      "nofollowmouse on, title:^(Picture-in-Picture)$"
+
+      "keepaspectratio on, content:video"
     ];
 
     windowrulev2 = [

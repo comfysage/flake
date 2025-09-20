@@ -25,8 +25,6 @@ in
       };
     };
 
-    gestures.workspace_swipe = config.garden.profiles.laptop.enable;
-
     cursor = {
       no_hardware_cursors = true;
     };

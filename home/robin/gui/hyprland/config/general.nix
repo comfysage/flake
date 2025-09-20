@@ -4,7 +4,7 @@
 
     gaps_in = 8;
     gaps_out = 8;
-    gaps_workspaces = 0;
+    gaps_workspaces = 16;
     border_size = 6;
     no_border_on_floating = false;
 

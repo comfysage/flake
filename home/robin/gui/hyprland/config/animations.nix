@@ -1,7 +1,6 @@
 {
   wayland.windowManager.hyprland.settings.animations = {
     enabled = true;
-    first_launch_animation = false;
 
     # █▄▄ █▀▀ ▀█ █ █▀▀ █▀█   █▀▀ █░█ █▀█ █░█ █▀▀
     # █▄█ ██▄ █▄ █ ██▄ █▀▄   █▄▄ █▄█ █▀▄ ▀▄▀ ██▄

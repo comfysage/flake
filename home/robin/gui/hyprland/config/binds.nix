@@ -126,5 +126,12 @@ in
       ", XF86MonBrightnessUp, exec, brightnessctl set 5%+ -q"
       ", XF86MonBrightnessDown, exec, brightnessctl set 5%- -q"
     ];
+
+    gesture = [
+      "3, horizontal, workspace"
+
+      "4, down, scale: 0.6, dispatcher, movetoworkspacesilent, special"
+      "4, up, scale: 0.6, dispatcher, togglespecialworkspace"
+    ];
   };
 }
