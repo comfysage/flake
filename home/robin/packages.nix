@@ -42,6 +42,7 @@ in
         # bitwarden-cli # bitwarden, my chosen password manager
         # vhs # programmatically make gifs
         youtube-music
+        zotero
         ;
     })
 
