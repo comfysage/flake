@@ -13,7 +13,6 @@ in
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
-      "swww-daemon"
     ]
     ++ optionals (defaults.bar == "waybar") [ "waybar" ];
   };
