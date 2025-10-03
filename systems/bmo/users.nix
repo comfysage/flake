@@ -5,7 +5,7 @@
 
   home-manager.users.robin = {
     programs = {
-      hyprland.enable = true;
+      niri.enable = true;
 
       # programs
       firefox.enable = true;

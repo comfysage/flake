@@ -6,6 +6,7 @@
     ./direnv.nix
     ./discord.nix
     ./fht-compositor.nix
+    ./niri.nix
     ./pentesting.nix
     # keep-sorted end
   ];

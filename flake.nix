@@ -108,6 +108,16 @@
       };
     };
 
+    niri = {
+      type = "github";
+      owner = "sodiboo";
+      repo = "niri-flake";
+
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     fht-compositor = {
       type = "github";
       owner = "nferhat";

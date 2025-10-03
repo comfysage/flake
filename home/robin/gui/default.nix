@@ -9,6 +9,7 @@
     ./dunst.nix
     ./firefox.nix
     ./ghostty.nix
+    ./niri
     ./obsidian.nix
     ./quickshell.nix
     ./satty.nix
