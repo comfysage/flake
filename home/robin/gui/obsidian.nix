@@ -1,23 +1,15 @@
 {
   lib,
-  pkgs,
   config,
   ...
 }:
 let
-  inherit (lib) attrValues mkIf;
+  inherit (lib) mkIf;
 in
 {
-  garden.packages = mkIf config.garden.profiles.workstation.enable {
-    obsidian = pkgs.symlinkJoin {
-      name = "obsidian-wrapped";
-      paths = attrValues {
-        inherit (pkgs)
-          # for the pandoc plugin
-          pandoc
-          ;
+  programs.obsidian =
+    mkIf (config.garden.profiles.graphical.enable && config.garden.profiles.workstation.enable)
+      {
+        enable = true;
       };
-      meta.mainProgram = pkgs.obsidian.meta.mainProgram;
-    };
-  };
 }
