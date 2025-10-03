@@ -8,9 +8,7 @@
       niri.enable = true;
 
       # programs
-      firefox.enable = true;
       chromium.enable = true;
-
       discord.enable = true;
     };
 
