@@ -23,6 +23,8 @@
       window-padding-balance = true;
       window-decoration = toString pkgs.stdenv.hostPlatform.isDarwin;
       gtk-titlebar = false;
+      window-width = 96;
+      window-height = 24;
 
       window-save-state = "always";
 
