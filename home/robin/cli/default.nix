@@ -9,6 +9,7 @@
     ./gh.nix
     ./git.nix
     ./goc.nix
+    ./intelli-shell.nix
     ./jj.nix
     ./nix-your-shell.nix
     ./ripgrep.nix
