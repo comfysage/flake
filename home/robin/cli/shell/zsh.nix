@@ -14,6 +14,7 @@ in
     history = {
       path = config.xdg.stateHome + "/zsh/history";
     };
+    setOptions = [ "autopushd" ];
 
     initContent = mkOrder 1000 (
       ''
@@ -38,9 +39,6 @@ in
         builtin zle -N cd-forward
         bindkey "^[[1;3D" cd-forward
         bindkey "^[[1;3C" cd-back
-      ''
-      + ''
-        setopt autopushd
       ''
     );
   };
