@@ -44,6 +44,7 @@ in
         # vhs # programmatically make gifs
         youtube-music
         zotero
+        chatterino2 # twitch chat
         ;
     })
 
