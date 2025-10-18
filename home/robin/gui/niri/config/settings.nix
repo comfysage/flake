@@ -38,6 +38,14 @@ in
       };
     };
 
+    outputs."HDMI-A-1" = {
+      mode = {
+        width = 1920;
+        height = 1080;
+        refresh = 144.0;
+      };
+    };
+
     overview = {
       zoom = 0.67;
       backdrop-color = palette.mantle;
