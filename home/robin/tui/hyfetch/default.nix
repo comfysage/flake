@@ -10,7 +10,7 @@
       chaifetch = pkgs.writeShellApplication {
         name = "chaifetch";
         text = ''
-          hyfetch --ascii-file "${./kitty.ascii}" "$@"
+          hyfetch --ascii-file "${./kittenyuri.ascii}" "$@"
         '';
         runtimeInputs = [
           pkgs.hyfetch
