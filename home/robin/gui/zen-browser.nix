@@ -19,37 +19,12 @@ in
       {
         programs.zen-browser = {
           enable = true;
-          package = lib.mkForce (
-            pkgs.wrapFirefox (
-              (inputs'.zen-browser.packages.beta-unwrapped.override {
-                policies = lib.removeAttrs config.programs.zen-browser.policies [ "Preferences" ];
-              }).overrideAttrs
-              (oa: {
-                installPhase = (oa.installPhase or "") + ''
-                  mkdir -p $out/lib/zen-bin-${oa.version}/defaults/pref/
-                  chmod 777 $out/lib/zen-bin-${oa.version}/defaults/pref/
-                  cat > "$out/lib/zen-bin-${oa.version}/defaults/pref/config-prefs.js" << EOF
-                  pref("general.config.obscure_value", 0);
-                  pref("general.config.filename", "config.js");
-                  // Sandbox needs to be disabled in release and Beta versions
-                  pref("general.config.sandbox_enabled", false);
-                  EOF
-                  cat > "$out/lib/zen-bin-${oa.version}/config.js" << EOF
-                  // skip 1st line
-                  try {
-                    let cmanifest = Cc['@mozilla.org/file/directory_service;1'].getService(Ci.nsIProperties).get('UChrm', Ci.nsIFile);
-                    cmanifest.append('utils');
-                    cmanifest.append('chrome.manifest');
-                    if(cmanifest.exists()){
-                      Components.manager.QueryInterface(Ci.nsIComponentRegistrar).autoRegister(cmanifest);
-                      ChromeUtils.importESModule('chrome://userchromejs/content/boot.sys.mjs');
-                    }
-                  } catch(ex) {};
-                  EOF
-                '';
-              })
-            ) { }
-          );
+          extraPrefsFiles = [
+            (builtins.fetchurl {
+              url = "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/master/program/config.js";
+              sha256 = "sha256-gNxCEmSj6gQnXhckt7VyNPiSVOlYKmwX6akRtlw6ptc=";
+            })
+          ];
 
           policies = {
             DisableAppUpdate = true;
