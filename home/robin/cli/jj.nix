@@ -8,10 +8,7 @@
     enable = config.programs.git.enable && config.garden.profiles.workstation.enable;
 
     settings = {
-      user = {
-        name = config.programs.git.userName;
-        email = config.programs.git.userEmail;
-      };
+      inherit (config.programs.git.settings) user;
 
       signing = {
         behavior = "own";

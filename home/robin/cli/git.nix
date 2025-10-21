@@ -37,73 +37,28 @@ in
     {
       programs.git = {
         package = pkgs.gitMinimal;
-        userName = "robin";
-        userEmail = "comfysage" + "@" + "isabelroses" + "." + "com";
 
-        signing = {
-          format = "ssh";
-          signByDefault = true;
-        };
-
-        delta = {
-          enable = true;
-
-          options = {
-            navigate = true;
-            side-by-side = true;
-            line-numbers = true;
+        settings = {
+          user = {
+            name = "robin";
+            email = "comfysage" + "@" + "isabelroses" + "." + "com";
           };
-        };
 
-        aliases = {
-          index = "status -s";
-          graph = "log --oneline --graph";
-          ahead = "!git log --oneline @{u}..HEAD | grep -cE '.*'";
+          aliases = {
+            index = "status -s";
+            graph = "log --oneline --graph";
+            ahead = "!git log --oneline @{u}..HEAD | grep -cE '.*'";
 
-          changelog = "-c pager.show=false show --format=' - %C(yellow)%h%C(reset) %<(80,trunc)%s' -q @@{1}..@@{0}";
-          amend = "commit --amend";
+            changelog = "-c pager.show=false show --format=' - %C(yellow)%h%C(reset) %<(80,trunc)%s' -q @@{1}..@@{0}";
+            amend = "commit --amend";
 
-          fpush = "push --force-with-lease";
+            fpush = "push --force-with-lease";
 
-          # stash
-          spush = "stash push -a";
-          spop = "stash pop -q";
-        };
+            # stash
+            spush = "stash push -a";
+            spop = "stash pop -q";
+          };
 
-        ignores = [
-          # system residue
-          ".cache/"
-          ".DS_Store"
-          ".Trashes"
-          ".Trash-*"
-          "*.bak"
-          "*.swp"
-          "*.swo"
-          "*.elc"
-          ".~lock*"
-
-          # build residue
-          "tmp/"
-          "target/"
-          "result"
-          "result-*"
-          "*.exe"
-          "*.exe~"
-          "*.dll"
-          "*.so"
-          "*.dylib"
-
-          # ide residue
-          ".idea/"
-          ".vscode/"
-
-          # dependencies
-          ".direnv/"
-          "node_modules"
-          "vendor"
-        ];
-
-        extraConfig = {
           core.editor = config.garden.programs.defaults.editor;
 
           # Qol
@@ -168,6 +123,55 @@ in
               }
             ]
           );
+        };
+
+        signing = {
+          format = "ssh";
+          signByDefault = true;
+        };
+
+        ignores = [
+          # system residue
+          ".cache/"
+          ".DS_Store"
+          ".Trashes"
+          ".Trash-*"
+          "*.bak"
+          "*.swp"
+          "*.swo"
+          "*.elc"
+          ".~lock*"
+
+          # build residue
+          "tmp/"
+          "target/"
+          "result"
+          "result-*"
+          "*.exe"
+          "*.exe~"
+          "*.dll"
+          "*.so"
+          "*.dylib"
+
+          # ide residue
+          ".idea/"
+          ".vscode/"
+
+          # dependencies
+          ".direnv/"
+          "node_modules"
+          "vendor"
+        ];
+      };
+
+      programs.delta = {
+        enable = true;
+        enableGitIntegration = true;
+
+        options = {
+          navigate = true;
+          side-by-side = true;
+          line-numbers = true;
         };
       };
     }
