@@ -65,10 +65,16 @@ let
           if defaults.fileManager == "cosmic-files" then "com.system76.CosmicFiles" else defaults.fileManager
         }.desktop"
       ];
-    };
+    }
+    // config.garden.xdg.associations;
 in
 {
-  xdg = {
+  options.garden.xdg.associations = lib.mkOption {
+    default = { };
+    type = with lib.types; attrsOf (listOf str);
+  };
+
+  config.xdg = {
     enable = true;
 
     cacheHome = "${config.home.homeDirectory}/.cache";
@@ -102,11 +108,11 @@ in
     };
   };
 
-  home.sessionVariables = vars // {
+  config.home.sessionVariables = vars // {
     GNUPGHOME = mkForce vars.GNUPGHOME;
   };
 
-  xdg.configFile = {
+  config.xdg.configFile = {
     "npm/npmrc" = template.npmrc;
     "python/pythonrc" = template.pythonrc;
   };
