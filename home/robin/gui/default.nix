@@ -15,6 +15,7 @@
     ./satty.nix
     ./spotify.nix
     ./wezterm
+    ./zathura.nix
     ./zed.nix
     ./zen-browser.nix
   ];
