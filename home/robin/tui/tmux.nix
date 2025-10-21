@@ -78,6 +78,7 @@ in
       reverseSplit = true;
       mouse = true;
       shell = "/run/current-system/sw/bin/${shell}";
+      terminal = "tmux-256color";
 
       plugins = [
         {
