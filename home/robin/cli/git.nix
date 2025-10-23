@@ -41,7 +41,7 @@ in
         settings = {
           user = {
             name = "robin";
-            email = "comfysage" + "@" + "isabelroses" + "." + "com";
+            email = "comfysagedev" + "@" + "gmail" + "." + "com";
           };
 
           aliases = {
